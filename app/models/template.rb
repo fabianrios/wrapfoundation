@@ -7,7 +7,8 @@ class Template < ActiveRecord::Base
      full: '300x300>'
    }
   
-  validates_presence_of :name, :price, :version, :description, :category, :screenshot, :content_type => /\Aimage\/.*\Z/
+  validates_presence_of :name, :price, :version, :description, :category
+  validates_attachment_content_type :screenshot, :content_type => %w(image/jpeg image/jpg image/png)
   
   attr_accessor :screenshot_file_name
   attr_accessor :screenshot_content_type
