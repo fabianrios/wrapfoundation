@@ -61,8 +61,6 @@ module Wrapfoundation
     
     #devise
     config.assets.initialize_on_precompile = false
-    #foundation
-    config.assets.compile = true
     
   end
 end
