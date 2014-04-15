@@ -67,4 +67,15 @@ Wrapfoundation::Application.configure do
   
   #foundation-heroku
   config.assets.compile = true
+  
+  #amazon s3
+  # config/environments/production.rb
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['wrapfoundation'],
+      :access_key_id => ENV['AKIAJTJAJQVXVPHOMKAQ'],
+      :secret_access_key => ENV['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']
+    }
+  }
 end

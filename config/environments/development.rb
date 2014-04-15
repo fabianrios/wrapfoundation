@@ -37,4 +37,14 @@ Wrapfoundation::Application.configure do
   
   #devise
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  
+  # config/environments/production.rb
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['wrapfoundation'],
+      :access_key_id => ENV['AKIAJTJAJQVXVPHOMKAQ'],
+      :secret_access_key => ENV['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']
+    }
+  }
 end

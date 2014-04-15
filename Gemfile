@@ -25,6 +25,10 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'foundation-rails'
 
+#images
+gem 'paperclip'
+gem 'aws-sdk'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

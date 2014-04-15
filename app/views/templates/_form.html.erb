@@ -16,8 +16,15 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
+	  <%= f.label :price %>
+	<div class="row collapse">
+		<div class="small-2 columns">
+		  <span class="prefix radius">$</span>
+		</div>
+		<div class="small-10 columns">
+			<%= f.text_field :price %>
+		</div>
+	</div>
   </div>
   <div class="field">
     <%= f.label :multiple %><br />
@@ -31,17 +38,25 @@
     <%= f.label :compatible %><br />
     <%= f.text_field :compatible %>
   </div>
+	<% versions = { '5' => '5', '4' => '4', '3' => '3' }%>
   <div class="field">
     <%= f.label :version %><br />
-    <%= f.text_field :version %>
+	<% list = versions.sort %> <%= f.select :version, list %>
   </div>
+	<% browsers = { 'latest firefox' => 'firefox', 'latest safari' => 'safari', 'Latest chrome' => 'chrome', 'Internet explorer 11' => 'ie11', 'Internet explorer 10' => 'ie10', 'Internet explorer 9' => 'ie9'   }%>
   <div class="field">
-    <%= f.label :browser %><br />
-    <%= f.text_field :browser %>
-  </div>
+	<fieldset>
+	<legend>Browser</legend> 
+	<% browsers.each do |a_value| %>
+		<%= f.check_box(:browser, { :multiple => true }, a_value) %>
+		<%= f.label :browser, a_value[0] %><br />
+	<% end %>
+	 </fieldset>
+	</div>
+	<% preprocessors = { 'SASS' => 'SASS', 'LESS' => 'LESS', 'STYLUS' => 'STYLUS' }%>
   <div class="field">
     <%= f.label :preprocessor %><br />
-    <%= f.text_field :preprocessor %>
+    <% list = preprocessors.sort %> <%= f.select :preprocessor, list %>
   </div>
   <div class="field">
     <%= f.label :category %><br />
@@ -57,11 +72,11 @@
   </div>
   <div class="field">
     <%= f.label :screenshot %><br />
-    <%= f.text_field :screenshot %>
+    <%= f.file_field :screenshot %>
   </div>
   <div class="field">
     <%= f.label :exclusive %><br />
-    <%= f.text_field :exclusive %>
+    <%= f.check_box :exclusive %>
   </div>
   <div class="field">
     <%= f.label :preview %><br />
@@ -69,7 +84,7 @@
   </div>
   <div class="field">
     <%= f.label :term %><br />
-    <%= f.text_field :term %>
+    <%= f.check_box :term %>
   </div>
   <div class="actions">
     <%= f.submit :class => 'button success right' %>
