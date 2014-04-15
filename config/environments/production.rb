@@ -70,12 +70,14 @@ Wrapfoundation::Application.configure do
   
   #amazon s3
   # config/environments/production.rb
+
   config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
+      :storage => :s3,
       :bucket => ENV['wrapfoundation'],
-      :access_key_id => ENV['AKIAJTJAJQVXVPHOMKAQ'],
-      :secret_access_key => ENV['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']
-    }
+      :s3_credentials => {
+          :access_key_id => ENV['AKIAJSCIRYKGB6MYWPWQ'],
+          :secret_access_key => ENV['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']
+      }
   }
+  
 end
