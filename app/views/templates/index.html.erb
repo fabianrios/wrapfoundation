@@ -1,0 +1,51 @@
+<h1>Listing templates</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Multiple</th>
+    <th>Extended</th>
+    <th>Compatible</th>
+    <th>Version</th>
+    <th>Browser</th>
+    <th>Preprocessor</th>
+    <th>Category</th>
+    <th>Tag</th>
+    <th>Description</th>
+    <th>Screenshot</th>
+    <th>Exclusive</th>
+    <th>Preview</th>
+    <th>Term</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @templates.each do |template| %>
+  <tr>
+    <td><%= template.name %></td>
+    <td><%= template.price %></td>
+    <td><%= template.multiple %></td>
+    <td><%= template.extended %></td>
+    <td><%= template.compatible %></td>
+    <td><%= template.version %></td>
+    <td><%= template.browser %></td>
+    <td><%= template.preprocessor %></td>
+    <td><%= template.category %></td>
+    <td><%= template.tag %></td>
+    <td><%= template.description %></td>
+    <td><%= template.screenshot %></td>
+    <td><%= template.exclusive %></td>
+    <td><%= template.preview %></td>
+    <td><%= template.term %></td>
+    <td><%= link_to 'Show', template %></td>
+    <td><%= link_to 'Edit', edit_template_path(template) %></td>
+    <td><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Template', new_template_path %>

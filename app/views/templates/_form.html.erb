@@ -1,0 +1,77 @@
+<%= form_for(@template) do |f| %>
+  <% if @template.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@template.errors.count, "error") %> prohibited this template from being saved:</h2>
+
+      <ul>
+      <% @template.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :multiple %><br />
+    <%= f.text_field :multiple %>
+  </div>
+  <div class="field">
+    <%= f.label :extended %><br />
+    <%= f.text_field :extended %>
+  </div>
+  <div class="field">
+    <%= f.label :compatible %><br />
+    <%= f.text_field :compatible %>
+  </div>
+  <div class="field">
+    <%= f.label :version %><br />
+    <%= f.text_field :version %>
+  </div>
+  <div class="field">
+    <%= f.label :browser %><br />
+    <%= f.text_field :browser %>
+  </div>
+  <div class="field">
+    <%= f.label :preprocessor %><br />
+    <%= f.text_field :preprocessor %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :tag %><br />
+    <%= f.text_field :tag %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :screenshot %><br />
+    <%= f.text_field :screenshot %>
+  </div>
+  <div class="field">
+    <%= f.label :exclusive %><br />
+    <%= f.text_field :exclusive %>
+  </div>
+  <div class="field">
+    <%= f.label :preview %><br />
+    <%= f.text_field :preview %>
+  </div>
+  <div class="field">
+    <%= f.label :term %><br />
+    <%= f.text_field :term %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => 'button success right' %>
+  </div>
+<% end %>

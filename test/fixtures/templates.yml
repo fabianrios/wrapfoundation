@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  price: 9.99
+  multiple: 9.99
+  extended: 9.99
+  compatible: MyString
+  version: MyString
+  browser: MyString
+  preprocessor: MyString
+  category: MyString
+  tag: MyString
+  description: MyText
+  screenshot: MyString
+  exclusive: MyString
+  preview: MyString
+  term: MyString
+
+two:
+  name: MyString
+  price: 9.99
+  multiple: 9.99
+  extended: 9.99
+  compatible: MyString
+  version: MyString
+  browser: MyString
+  preprocessor: MyString
+  category: MyString
+  tag: MyString
+  description: MyText
+  screenshot: MyString
+  exclusive: MyString
+  preview: MyString
+  term: MyString

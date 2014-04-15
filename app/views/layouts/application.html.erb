@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Wrapfoundation" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+	<nav class="top-bar" data-topbar>
+	  <ul class="title-area">
+	    <li class="name">
+	      <h1><a href="#">WrapFoundation</a></h1>
+	    </li>
+	    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+	  </ul>
+
+	  <section class="top-bar-section">
+	    <!-- Left Nav Section -->
+	    <ul class="left">
+	      <li class="active"><a href="#">Templates</a></li>
+	    </ul>
+
+	    <!-- Right Nav Section -->
+	    <ul class="right">
+		<% if user_signed_in? %>
+			<li>Logged in as <strong><%= current_user.email %></strong>.</li>
+			<li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+			<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+		<% else %>
+			<li><%= link_to "Sign up", new_user_registration_path %></li>
+			<li><%= link_to "Login", new_user_session_path %></li>
+		<% end %>
+	    </ul>
+	  </section>
+	</nav>
+	
+	<div class="row">
+		<div class="large-12 columns">
+			<%= content_tag(:div, raw(notice+'<a href="#" class="close">&times;</a>'), class: 'alert-box success', 'data-alert' => '') if notice %>
+			<%= content_tag(:div, alert,  class: 'alert-box alert', 'data-alert' => '' ) if alert  %>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="large-12 columns">
+			<%= yield %>
+		</div>
+	</div>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
