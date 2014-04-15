@@ -8,4 +8,9 @@ class Template < ActiveRecord::Base
    }
   
   validates_presence_of :name, :price, :version, :description, :category, :screenshot, :content_type => /\Aimage\/.*\Z/
+  
+  attr_accessor :screenshot_file_name
+  attr_accessor :screenshot_content_type
+  attr_accessor :screenshot_file_size
+  attr_accessor :screenshot_updated_at
 end
