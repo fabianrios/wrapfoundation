@@ -1,4 +1,7 @@
 <h1>Listing templates</h1>
+<% if current_user.try(:admin?) %>
+	<h3>hail! fabian rios</h3>
+<% end %>
 
 <table>
   <tr>
@@ -21,6 +24,8 @@
     <th></th>
     <th></th>
   </tr>
+
+
 
 <% @templates.each do |template| %>
   <tr>
